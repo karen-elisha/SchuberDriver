@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_pale_yellow">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- BACK -->
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_menu_revert"
+                android:background="#FFFFFF"
+                android:padding="10dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- HEADER -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="👤 My Profile"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:textColor="#5D4037" />
+
+                <View
+                    android:layout_width="60dp"
+                    android:layout_height="3dp"
+                    android:background="#FFB300"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+
+            <!-- PROFILE AVATAR -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="60dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#FFFFFF"
+                android:layout_marginBottom="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvProfileInitial"
+                        android:text="JD"
+                        android:textSize="34sp"
+                        android:textStyle="bold"
+                        android:textColor="#FF9800"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <Button
+                        android:id="@+id/btnEditPhoto"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:text="✏️"
+                        android:textSize="12sp"
+                        android:backgroundTint="#FFB300"
+                        app:cornerRadius="15dp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- PROGRESS BAR -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:indeterminateTint="#FF9800"
+                android:layout_marginBottom="8dp" />
+
+            <!-- MAIN PROFILE CARD -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profileCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#FFFFFF"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- NAME -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Full Name"
+                        android:textColor="#8D6E63"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/tvProfileName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Loading..."
+                        android:textColor="#5D4037"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- EMAIL -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:textColor="#8D6E63"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/tvProfileEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Loading..."
+                        android:textColor="#5D4037"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- PHONE -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phone"
+                        android:textColor="#8D6E63"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/tvProfilePhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Loading..."
+                        android:textColor="#5D4037"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- DATE OF BIRTH -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date of Birth"
+                        android:textColor="#8D6E63"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/tvProfileDOB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Not specified"
+                        android:textColor="#5D4037"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- LICENSE -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="License Number"
+                        android:textColor="#8D6E63"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/tvLicenseNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Not specified"
+                        android:textColor="#5D4037"
+                        android:layout_marginBottom="12dp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- VEHICLE CARD -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#FFFFFF"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🚌 VEHICLE INFORMATION"
+                        android:textColor="#FF9800"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.1"
+                        android:layout_marginBottom="14dp" />
+
+                    <!-- VEHICLE NUMBER -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vehicle Number"
+                        android:textColor="#8D6E63"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/tvProfileVehicle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Not specified"
+                        android:textColor="#5D4037"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- VEHICLE MODEL -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vehicle Model"
+                        android:textColor="#8D6E63"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/tvProfileVehicleModel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Not specified"
+                        android:textColor="#5D4037"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- VEHICLE COLOR -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vehicle Color"
+                        android:textColor="#8D6E63"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/tvProfileVehicleColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Not specified"
+                        android:textColor="#5D4037"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- VEHICLE TYPE -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vehicle Type"
+                        android:textColor="#8D6E63"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/tvVehicleType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Not specified"
+                        android:textColor="#5D4037"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- VEHICLE CAPACITY -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vehicle Capacity"
+                        android:textColor="#8D6E63"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/tvVehicleCapacity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Not specified"
+                        android:textColor="#5D4037"
+                        android:layout_marginBottom="4dp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- STATS CARD -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#FFFFFF"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="⭐ PERFORMANCE"
+                        android:textColor="#FF9800"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.1"
+                        android:layout_marginBottom="14dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <TextView
+                                android:id="@+id/tvProfileRating"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5.0"
+                                android:textColor="#FF9800"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/tvStars"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="★★★★★"
+                                android:textColor="#FFB300"
+                                android:textSize="14sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rating"
+                                android:textColor="#8D6E63"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <TextView
+                                android:id="@+id/tvTotalTrips"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="#5D4037"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Trips"
+                                android:textColor="#8D6E63"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <TextView
+                                android:id="@+id/tvMemberSince"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2025"
+                                android:textColor="#5D4037"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Member Since"
+                                android:textColor="#8D6E63"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ACTION BUTTONS -->
+            <Button
+                android:id="@+id/btnEditProfile"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="✏️ Edit Profile"
+                android:backgroundTint="#FFB300"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:stateListAnimator="@null"
+                android:layout_marginBottom="10dp" />
+
+            <Button
+                android:id="@+id/btnChangePassword"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="🔒 Change Password"
+                android:backgroundTint="#5C6BC0"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:stateListAnimator="@null"
+                android:layout_marginBottom="10dp" />
+
+            <Button
+                android:id="@+id/btnDocuments"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="📄 My Documents"
+                android:backgroundTint="#26A69A"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:stateListAnimator="@null"
+                android:layout_marginBottom="10dp" />
+
+            <Button
+                android:id="@+id/btnPayment"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="💳 Payment Settings"
+                android:backgroundTint="#66BB6A"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:stateListAnimator="@null"
+                android:layout_marginBottom="10dp" />
+
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="Logout"
+                android:backgroundTint="#E53935"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:stateListAnimator="@null"
+                android:layout_marginBottom="20dp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

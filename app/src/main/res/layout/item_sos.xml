@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="14dp"
+    app:cardBackgroundColor="#FFFFF0"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <!-- Top Row: Icon + DateTime + Status -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tvStatusIcon"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:text="🚨"
+                android:textSize="22sp"
+                android:gravity="center" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp">
+
+                <TextView
+                    android:id="@+id/tvDateTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="01 Jan 2025, 10:00 AM"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#FF9800" />
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Active Emergency"
+                    android:textSize="11sp"
+                    android:textColor="#FF5252"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvResponseTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="URGENT"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#FFC107"
+                android:background="#1AFFC107"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp" />
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#2A2A3E"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Location -->
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📍 Lat: 0.0000, Lng: 0.0000"
+            android:textSize="12sp"
+            android:textColor="#B0B0B0"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Notes -->
+        <TextView
+            android:id="@+id/tvNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Emergency assistance requested"
+            android:textSize="12sp"
+            android:textColor="#909090"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Action Buttons (shown only when not resolved) -->
+        <LinearLayout
+            android:id="@+id/actionButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <Button
+                android:id="@+id/btnResolve"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="Resolve"
+                android:textSize="11sp"
+                android:backgroundTint="#1B5E20"
+                android:textColor="#FFFFFF"
+                android:stateListAnimator="@null"
+                android:layout_marginEnd="4dp" />
+
+            <Button
+                android:id="@+id/btnMap"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="Map"
+                android:textSize="11sp"
+                android:backgroundTint="#1A237E"
+                android:textColor="#FFFFFF"
+                android:stateListAnimator="@null"
+                android:layout_marginEnd="4dp" />
+
+            <Button
+                android:id="@+id/btnCall"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="📞 Call"
+                android:textSize="11sp"
+                android:backgroundTint="#B71C1C"
+                android:textColor="#FFFFFF"
+                android:stateListAnimator="@null" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

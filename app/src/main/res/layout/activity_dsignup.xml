@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_pale_yellow">
+
+    <!-- Scroll -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <!-- 🔝 HEADER -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="25dp">
+
+                <ImageView
+                    android:id="@+id/imgLogo"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_marginBottom="10dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/schuber" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DRIVER SIGNUP"
+                    android:textColor="#FF9800"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:background="#33FF9800"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="18dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:letterSpacing="0.15" />
+            </LinearLayout>
+
+            <!-- 📋 SIGNUP CARD -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/signupCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="35dp"
+                app:cardElevation="25dp"
+                app:cardBackgroundColor="#FFFFF0"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="28dp">
+
+                    <!-- TITLE -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Create Account"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        android:textColor="#FF9800" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Join the driver network"
+                        android:textSize="13sp"
+                        android:textColor="#B0B0B0"
+                        android:layout_marginBottom="25dp"
+                        android:layout_marginTop="4dp" />
+
+                    <!-- NAME -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="👤 FULL NAME"
+                        android:textColor="#FF9800"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etName"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:background="@drawable/edittext_rounded"
+                        android:hint="John Driver"
+                        android:textColor="#000000"
+                        android:textColorHint="#808090"
+                        android:padding="16dp"
+                        android:layout_marginBottom="18dp" />
+
+                    <!-- VEHICLE -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🚚 VEHICLE NUMBER"
+                        android:textColor="#FF9800"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etVehicle"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:background="@drawable/edittext_rounded"
+                        android:hint="KA-01-AB-1234"
+                        android:textColor="#000000"
+                        android:textColorHint="#808090"
+                        android:padding="16dp"
+                        android:layout_marginBottom="18dp" />
+
+                    <!-- EMAIL -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📧 EMAIL"
+                        android:textColor="#FF9800"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:background="@drawable/edittext_rounded"
+                        android:hint="driver@schuber.com"
+                        android:inputType="textEmailAddress"
+                        android:textColor="#000000"
+                        android:textColorHint="#808090"
+                        android:padding="16dp"
+                        android:layout_marginBottom="18dp" />
+
+                    <!-- PHONE -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📞 PHONE"
+                        android:textColor="#FF9800"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:background="@drawable/edittext_rounded"
+                        android:hint="+91 9876543210"
+                        android:inputType="phone"
+                        android:textColor="#000000"
+                        android:textColorHint="#808090"
+                        android:padding="16dp"
+                        android:layout_marginBottom="18dp" />
+
+                    <!-- PASSWORD -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🔒 PASSWORD"
+                        android:textColor="#FF9800"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginBottom="20dp">
+
+                        <EditText
+                            android:id="@+id/etPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/edittext_rounded"
+                            android:hint="Minimum 6 characters"
+                            android:inputType="textPassword"
+                            android:textColor="#000000"
+                            android:textColorHint="#808090"
+                            android:padding="16dp"
+                            android:paddingEnd="50dp" />
+
+                        <ImageView
+                            android:id="@+id/ivTogglePassword"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="16dp"
+                            android:alpha="0.6"
+                            android:src="@drawable/ic_eye" />
+                    </RelativeLayout>
+
+
+                    <!-- Progress Bar -->
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:visibility="gone" />
+
+                    <!-- SIGNUP BUTTON -->
+                    <Button
+                        android:id="@+id/btnSignup"
+                        android:layout_width="match_parent"
+                        android:layout_height="58dp"
+                        android:text="CREATE ACCOUNT"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:backgroundTint="#FF9800"
+                        android:elevation="5dp" />
+
+                    <!-- LOGIN LINK -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Already have an account? "
+                            android:textColor="#B0B0B0"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tvLogin"
+                            android:text="Sign In"
+                            android:textColor="#FF9800"
+                            android:textStyle="bold"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- FOOTER -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⚡ SAFE • VERIFIED • REAL-TIME TRACKING ⚡"
+                android:textSize="9sp"
+                android:textColor="#606070"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
+                android:letterSpacing="0.08" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

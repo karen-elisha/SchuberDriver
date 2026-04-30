@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_pale_yellow">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="40dp">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/imgLogoSplash"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/schuber"
+            android:scaleType="centerInside"
+            android:layout_marginBottom="20dp" />
+
+        <!-- App Name -->
+        <TextView
+            android:id="@+id/tvAppNameSplash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SCHUBER"
+            android:textColor="#FF9800"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="8dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Safe School Transport"
+            android:textColor="#A0896E"
+            android:textSize="14sp"
+            android:letterSpacing="0.05" />
+
+        <Button
+            android:id="@+id/btnExploreDriver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Explore Driver App"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#FF9800"
+            android:padding="12dp" />
+
+
+    </LinearLayout>
+    <!-- Loading Indicator at bottom -->
+    <ProgressBar
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:indeterminateTint="#FF9800" />
+
+    <!-- Version text -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:text="v1.0.0"
+        android:textColor="#B0A090"
+        android:textSize="11sp"
+        android:gravity="center" />
+
+</RelativeLayout>
