@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">S</string>
+    <string name="app_name">Schuber Driver</string>
+    <!-- TODO: Replace with your actual Google Maps API key from Google Cloud Console -->
+    <string name="google_maps_api_key">AIzaSyCz5j9jpqlR9mS-5MJYYjeQf04FWNE_uvE</string>
+    <!-- TODO: Replace with your Web Client ID from Firebase Console > Authentication > Sign-in method > Google -->
+    <string name="default_web_client_id">909907611697-2u8bg9360vctu25rbhj01298cmgbsd53.apps.googleusercontent.com</string>
 </resources>

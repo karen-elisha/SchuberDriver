@@ -3,6 +3,7 @@ package com.example.s
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +25,10 @@ class DSignup : AppCompatActivity() {
                 "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
                 ")+"
     )
+
+    companion object {
+        private const val TAG = "DSignup"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,42 +90,64 @@ class DSignup : AppCompatActivity() {
     private fun registerUser(name: String, vehicle: String, email: String, phone: String, password: String) {
         setLoading(true)
 
-        val prefs = getSharedPreferences("SchuberPrefs", Context.MODE_PRIVATE)
+        FirebaseManager.signUpWithEmail(
+            email, password,
+            onSuccess = { user ->
+                Log.d(TAG, "Firebase signup success: ${user.email}")
 
-        // Check if email already registered
-        if (prefs.getString("${email}_password", null) != null) {
-            setLoading(false)
-            Toast.makeText(this, "Email already registered. Please sign in.", Toast.LENGTH_LONG).show()
-            return
-        }
+                // Save driver profile to Firestore
+                val profileData = hashMapOf<String, Any>(
+                    "email" to email,
+                    "displayName" to name,
+                    "vehicleNumber" to vehicle,
+                    "phone" to phone,
+                    "authProvider" to "email",
+                    "driverRating" to 5.0,
+                    "totalTrips" to 0,
+                    "totalEarnings" to 0,
+                    "isActive" to false,
+                    "createdAt" to com.google.firebase.Timestamp.now(),
+                    "lastLogin" to com.google.firebase.Timestamp.now()
+                )
 
-        prefs.edit().apply {
-            // Save password with email_password key (consistent across login & profile)
-            putString("${email}_password", password)
-            // Also save email as key for backward compat
-            putString(email, password)
+                FirebaseManager.saveDriverProfile(
+                    profileData,
+                    onSuccess = {
+                        Log.d(TAG, "Firestore profile saved")
+                    },
+                    onFailure = { msg ->
+                        Log.e(TAG, "Firestore save failed: $msg")
+                    }
+                )
 
-            // Save profile data
-            putString("userEmail", email)
-            putString("driverName", name)
-            putString("vehicleNumber", vehicle)
-            putString("driverPhone", phone)
-            putBoolean("isLoggedIn", true)
-            putFloat("driverRating", 5.0f)
-            putInt("totalDeliveries", 0)
-            putInt("totalEarnings", 0)
-            putBoolean("driverIsActive", false)
-            putLong("registrationDate", System.currentTimeMillis())
-        }.apply()
+                // Save to local prefs for quick access
+                val prefs = getSharedPreferences("SchuberPrefs", Context.MODE_PRIVATE)
+                prefs.edit().apply {
+                    putString("userEmail", email)
+                    putString("driverName", name)
+                    putString("vehicleNumber", vehicle)
+                    putString("driverPhone", phone)
+                    putBoolean("isLoggedIn", true)
+                    putFloat("driverRating", 5.0f)
+                    putInt("totalDeliveries", 0)
+                    putInt("totalEarnings", 0)
+                    putBoolean("driverIsActive", false)
+                    putLong("registrationDate", System.currentTimeMillis())
+                }.apply()
 
-        setLoading(false)
-        Toast.makeText(this, "✅ Account created successfully!", Toast.LENGTH_SHORT).show()
+                setLoading(false)
+                Toast.makeText(this, "✅ Account created successfully!", Toast.LENGTH_SHORT).show()
 
-        // Go directly to dashboard after signup
-        val intent = Intent(this, DriverDashboard::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        startActivity(intent)
-        finish()
+                val intent = Intent(this, DriverDashboard::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                finish()
+            },
+            onFailure = { msg ->
+                setLoading(false)
+                Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+            }
+        )
     }
 
     private fun setLoading(loading: Boolean) {

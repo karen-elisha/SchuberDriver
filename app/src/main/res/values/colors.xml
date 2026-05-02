@@ -2,4 +2,34 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary Brand Colors -->
+    <color name="primary">#FF9800</color>
+    <color name="primary_dark">#F57C00</color>
+    <color name="primary_light">#FFB74D</color>
+    <color name="accent">#FF6D00</color>
+
+    <!-- Dashboard Colors -->
+    <color name="bg_dark">#1A1A2E</color>
+    <color name="bg_card">#16213E</color>
+    <color name="bg_card_light">#1E2D4A</color>
+    <color name="text_primary_light">#ECEFF1</color>
+    <color name="text_secondary_light">#90A4AE</color>
+
+    <!-- Status Colors -->
+    <color name="status_active">#00E676</color>
+    <color name="status_offline">#78909C</color>
+    <color name="status_sos">#FF1744</color>
+
+    <!-- Map Overlay -->
+    <color name="map_overlay">#CC1A1A2E</color>
+    <color name="map_overlay_light">#801A1A2E</color>
+
+    <!-- Gradient Colors -->
+    <color name="gradient_start">#FF9800</color>
+    <color name="gradient_end">#FF6D00</color>
+
+    <!-- Google Sign-In -->
+    <color name="google_blue">#4285F4</color>
+    <color name="google_red">#EA4335</color>
 </resources>

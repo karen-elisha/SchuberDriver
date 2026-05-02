@@ -84,8 +84,53 @@
                         android:text="Sign in to access your dashboard"
                         android:textSize="13sp"
                         android:textColor="#B0B0B0"
-                        android:layout_marginBottom="30dp"
+                        android:layout_marginBottom="24dp"
                         android:layout_marginTop="4dp" />
+
+                    <!-- ══════ GOOGLE SIGN-IN BUTTON ══════ -->
+                    <Button
+                        android:id="@+id/btnGoogleSignIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:text="   Sign in with Google"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:textAllCaps="false"
+                        android:background="@drawable/bg_google_btn"
+                        android:drawableStart="@android:drawable/ic_menu_agenda"
+                        android:drawablePadding="12dp"
+                        android:drawableTint="#FFFFFF"
+                        android:stateListAnimator="@null"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Divider -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:background="#E0E0E0" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="  or sign in with email  "
+                            android:textColor="#B0B0B0"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:background="#E0E0E0" />
+                    </LinearLayout>
 
                     <!-- Email Field -->
                     <TextView
@@ -160,7 +205,7 @@
                         android:text="Forgot password?"
                         android:textSize="12sp"
                         android:textColor="#FF9800"
-                        android:layout_marginBottom="30dp"
+                        android:layout_marginBottom="24dp"
                         android:layout_gravity="end"
                         android:padding="8dp" />
 
@@ -193,7 +238,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center"
-                        android:layout_marginTop="25dp">
+                        android:layout_marginTop="20dp">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -219,8 +264,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="⚡ SAFE • RELIABLE • REAL-TIME TRACKING ⚡"
-                android:textSize="9sp"
+                android:text="🔒 Secured by Firebase Authentication"
+                android:textSize="10sp"
                 android:textColor="#606070"
                 android:gravity="center"
                 android:layout_marginTop="10dp"

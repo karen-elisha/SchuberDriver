@@ -285,7 +285,12 @@ class DriverProfile : AppCompatActivity() {
     }
 
     private fun performLogout() {
+        // Sign out of Firebase
+        FirebaseManager.signOut()
+        // Clear local preferences
         getSharedPreferences("SchuberPrefs", Context.MODE_PRIVATE).edit().clear().apply()
+        // Stop location service
+        stopService(Intent(this, LocationTrackingService::class.java))
         val intent = Intent(this, DLogin::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)

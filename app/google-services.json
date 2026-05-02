@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "909907611697",
+    "project_id": "schuber-dd506",
+    "storage_bucket": "schuber-dd506.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909907611697:android:9f833f314b8ef7bf7fc510",
+        "android_client_info": {
+          "package_name": "com.example.s"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "909907611697-2u8bg9360vctu25rbhj01298cmgbsd53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8nD4R9f4jZyKtA1wKZZ99MQ0EnMU4Aec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "909907611697-2u8bg9360vctu25rbhj01298cmgbsd53.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
